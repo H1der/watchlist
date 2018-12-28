@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
 </head>
 <body>
-<h2>{{ name }}'s Watchlist</h2>
+<h2>
+    <img class="avatar" src="{{ url_for('static',filename='images/avatar.png') }}" alt="Avatar">
+    {{ name }}'s Watchlist</h2>
 {# 使用length 过滤器取 movies 变量的长度 #}
 <p>{{ movies|length }}Titles</p>
-<ul>
+<ul class="movie-list">
     {% for movie in movies %}
         <li>{{ movie.title }} - {{ movie.year }}</li>
     {% endfor %}
 </ul>
+<img class="totoro" src="{{ url_for('static',filename='images/totoro.gif') }}" alt="Walking Totoro">
 <footer>
     <small>&copy; 2018 <a href="http://www.2hider.com">Hider</a></small>
 </footer>
