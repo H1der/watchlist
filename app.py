@@ -36,7 +36,7 @@ movies = [
 def index():
     user = User.query.first()
     movies = Movie.query.all()
-    return render_template('index', user=user, movies=movies)
+    return render_template('index.html', user=user, movies=movies)
 
 
 class User(db.Model):
